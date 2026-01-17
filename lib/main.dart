@@ -36,12 +36,14 @@ class CounterWidget extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Consumer<CounterModel>(
+          //here👇
           builder: (BuildContext context, CounterModel counter, Widget? child) {
+            //5th line
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Counter Value: ${counter.counter}",
+                  "Counter Value: ${counter.counter}", //first counter is instance of CounterModel on the 5th line above while other counter is the getter initialised in CounterModel.dart class
                   style: TextStyle(fontSize: 29),
                 ),
                 ElevatedButton(
